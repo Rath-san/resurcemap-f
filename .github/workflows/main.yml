@@ -33,6 +33,10 @@ jobs:
           echo Add other actions to build,
           echo "${{ inputs.username }}", and deploy your project.
 
+          npm ci
+          npm run build
+          cd dist
+
           git config --global user.email "rim.kozlowski@gmail.com"
           git config --global user.name "Rath-san"
           git init
