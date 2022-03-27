@@ -40,7 +40,7 @@ jobs:
           git config --global user.email "rim.kozlowski@gmail.com"
           git config --global user.name "Rath-san"
           git init
-          git add index.html
+          git add -A
           git commit -m 'Triggered by a ${{ github.event_name }}'
           git push -f https://Rath-san:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git master:gh-pages
 
