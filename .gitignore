@@ -1,0 +1,8 @@
+node_modules
+.env
+_replicator
+_users
+markers
+pouch_all_dbs
+log.txt
+pouch__all_dbs__
