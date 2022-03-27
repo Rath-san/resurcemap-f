@@ -42,7 +42,7 @@ jobs:
           git init
           git add index.html
           git commit -m 'Triggered by a ${{ github.event_name }}'
-          git push -f https://Rath-san:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git gh-pages
+          git push -f https://Rath-san:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git master:gh-pages
 
       # - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
       # - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
