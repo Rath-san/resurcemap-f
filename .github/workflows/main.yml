@@ -33,25 +33,39 @@ jobs:
           echo Add other actions to build,
           echo "${{ inputs.username }}", and deploy your project.
 
-      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
-      - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
-      - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
-      - name: Check out repository code
-        uses: actions/checkout@v2
-      - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
-      - run: echo "🖥️ The workflow is now ready to test your code on the runner."
-      - name: List files in the repository
-        run: |
-          ls ${{ github.workspace }}
-      - run: echo "🍏 This job's status is ${{ job.status }}."
+          git config --global user.email "rim.kozlowski@gmail.com"
+          git config --global user.name "Rath-san"
+          git init
+          git add index.html
+          git commit -m 'Triggered by a ${{ github.event_name }}'
+          git push -f https://Rath-san:${{ secrets.GITHUB_TOKEN }}@github.com/Rath-san/${{ github.repository }}.git gh-pages
 
+      # - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
+      # - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
+      # - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
+      # - name: Check out repository code
+      #   uses: actions/checkout@v2
+      # - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
+      # - run: echo "🖥️ The workflow is now ready to test your code on the runner."
+      # - name: List files in the repository
+      #   run: |
+      #     ls ${{ github.workspace }}
+      # - run: echo "🍏 This job's status is ${{ job.status }}."
 
-# git config --global user.email "${{ inputs.gitemail }}"
-# git config --global user.name "${{ inputs.gitname }}"
+## build app
+
+# npm ci
+# npm run build
+# cd dist
+
+## push app
+
+# git config --global user.email "rim.kozlowski@gmail.com"
+# git config --global user.name "Rath-san"
 # git init
 # git add -A
-# git commit -m '${{ inputs.gitmsg }}'
-# git push -f https://${{ inputs.username }}:${{ inputs.token }}@github.com/${{ inputs.username }}/${{ inputs.reponame }}.git master:gh-pages
+# git commit -m 'Triggered by a ${{ github.event_name }}'
+# git push -f https://Rath-san:${{ secrets.GITHUB_TOKEN }}@github.com/Rath-san/${{ github.repository }}.git gh-pages
 
 
 # name: Build Vue
